@@ -1,5 +1,5 @@
-__Task will done during 01-04 February__
-I have to finish my previious project, thank you for patien
+# Task will done during 01-04 February
+***I have to finish my previous project, thanks for your patience***
 
 **Task description:**
 
