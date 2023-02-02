@@ -7,7 +7,7 @@ class Search extends React.Component {
   render() {
     return <section className={styles.search}>
       <InputComponent label="Try to find product:" type="number" placeholder="id: number" />
-      <ButtonComponent text="Search" />
+      <ButtonComponent text="Search" onClickHandler={()=>console.log("press search") } />
     </section>
   }
     
