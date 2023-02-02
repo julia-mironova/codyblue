@@ -1,0 +1,7 @@
+.section {
+  display: flex;
+  height: inherit;
+  background-color: aqua;
+  width: calc(90%);
+  margin: 0 auto;
+}
