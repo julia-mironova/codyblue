@@ -1,5 +1,6 @@
 .section {
   display: flex;
+  flex-direction: column;
   height: inherit;
   background-color: aqua;
   width: calc(90%);

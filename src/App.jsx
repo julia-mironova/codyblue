@@ -2,6 +2,7 @@ import React from "react";
 import { Search } from "./components/search/Search.jsx";
 import { Wrapper } from './components/wrapper/Wrapper.jsx';
 import './App.css';
+import { TableComponent } from "./components/table/Table.jsx";
 
 class App extends React.Component {
   render() {
@@ -14,7 +15,8 @@ class App extends React.Component {
       </header>
       <main className="App-main">
         <Wrapper>
-            <Search/>  
+            <Search /> 
+            <TableComponent />
         </Wrapper>
       </main>
       <footer className="App-header">
