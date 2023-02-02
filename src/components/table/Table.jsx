@@ -6,6 +6,7 @@ import { styled } from '@mui/material/styles';
 import styles from "./Table.module.css";
 import { height } from "@mui/system";
 import { yellow } from "@mui/material/colors";
+import { ModalComponent } from "../modal/Modal.jsx";
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 170, headerClassName: 'header' },
@@ -16,6 +17,28 @@ const columns = [
 const rows = [ ...products];
 
 class TableComponent extends React.Component {
+  constructor () {
+    super();
+    this.state = {
+      showModal: false,
+      productInfo:""
+    };
+  } 
+
+  handleCloseModal = () =>{
+    this.setState({
+      showModal: false,
+      productInfo: "",
+    });
+  }
+
+  showInfo = (rowInfo) => {
+    this.setState({
+      showModal: true,
+      productInfo: rowInfo.row,
+    });
+  }
+
   render() {
     return (
       <Box className={styles.table} sx={{
@@ -30,7 +53,11 @@ class TableComponent extends React.Component {
         pageSize={5}
         rowsPerPageOptions={[5]}
         getRowClassName={(params) => `yellow`}
-      />
+        onRowClick={this.showInfo}
+        />
+        <ModalComponent showModal={this.state.showModal} closeModal={this.handleCloseModal}>
+          <h1>{JSON.stringify(this.state.productInfo)}</h1>
+        </ModalComponent>
     </Box>
   );  
   }    
