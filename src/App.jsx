@@ -9,20 +9,24 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: '',
-      id: "",  
+      id: '',
       rows: [...products]
     };    
   }  
 
   searchById = (e) => {
-    e.preventDefault();    
-    let newRows = this.state.rows.filter(el => el.id === Number(this.state.value))
-    this.setState({rows: newRows})
+    e.preventDefault();
+    let newRows = this.state.rows.filter(el => el.id === Number(this.state.id))
+    this.setState({
+      rows: newRows
+    })    
   }
 
   handleChange = (e) => {
-    this.setState({ value: e.target.value });
+    this.setState({
+      rows: [...products],
+      id: e.target.value
+    });
   }
 
   render() {
@@ -35,7 +39,7 @@ class App extends React.Component {
       </header>
       <main className="App-main">
         <Wrapper>
-            <Search value={this.state.value} handleChange={this.handleChange} onClickHandler={ this.searchById } /> 
+            <Search value={this.state.id} handleChange={this.handleChange} onClickHandler={ this.searchById } /> 
             <TableComponent rows={this.state.rows} />
         </Wrapper>
       </main>
