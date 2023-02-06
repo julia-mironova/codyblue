@@ -1,5 +1,4 @@
 # Task 
-***I have to finish my previous project, thanks for your patience***
 
 **Task description:**
 
