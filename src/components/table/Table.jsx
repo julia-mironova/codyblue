@@ -2,19 +2,7 @@ import React from "react";
 import { ModalComponent } from "../modal/Modal.jsx";
 import { DataGrid } from '@mui/x-data-grid';
 import { Box } from '@mui/material';
-import { products } from "../../fake_data.js";
 import styles from "./Table.module.css";
-
-const columns = [
-  { field: 'id', headerName: 'ID', width: 170, headerClassName: 'header' },
-  { field: 'name', headerName: 'Name', width: 300, headerClassName: 'header' },
-  { field: 'year', headerName: 'Year', width: 300, headerClassName: 'header' }  
-];
-
-const rows = [...products];
-const colorsAll = [...rows.map(e => e.color)];
-const colors = Array.from(new Set(colorsAll))
-console.log(colors, "colors")
 
 class TableComponent extends React.Component {
   constructor () {
@@ -23,7 +11,7 @@ class TableComponent extends React.Component {
       showModal: false,
       productInfo:""
     };
-  } 
+  }
 
   handleCloseModal = () =>{
     this.setState({
@@ -38,7 +26,7 @@ class TableComponent extends React.Component {
       productInfo: rowInfo.row,
     });
   }
-
+  
   getColor = () => {   
     return "green"
   }
@@ -56,6 +44,17 @@ class TableComponent extends React.Component {
   }
 
   render() {
+    const columns = [
+    { field: 'id', headerName: 'ID', width: 170, headerClassName: 'header' },
+    { field: 'name', headerName: 'Name', width: 300, headerClassName: 'header' },
+    { field: 'year', headerName: 'Year', width: 300, headerClassName: 'header' }  
+   ];
+
+
+    //const colorsAll = [...this.props.rows.map(e => e.color)];
+// const colors = Array.from(new Set(colorsAll))
+// console.log(colors, "colors")
+    
     return (
       <Box className={styles.table} sx={{
         '& .header': { backgroundColor: "#32a1ce" },
@@ -67,7 +66,7 @@ class TableComponent extends React.Component {
         //https://www.ag-grid.com/react-data-grid/row-styles/
         }}>
       <DataGrid
-        rows={rows}
+        rows={this.props.rows}
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}

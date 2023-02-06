@@ -1,10 +1,29 @@
 import React from "react";
 import { Search } from "./components/search/Search.jsx";
 import { Wrapper } from './components/wrapper/Wrapper.jsx';
-import './App.css';
+import { products } from "./fake_data.js";
 import { TableComponent } from "./components/table/Table.jsx";
+import './App.css';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: '',
+      id: "",  
+      rows: [...products]
+    };    
+  }  
+
+  searchById = (e) => {
+    e.preventDefault();    
+    console.log(this.state.value, "searchById")
+  }
+
+  handleChange = (e) => {
+    this.setState({ value: e.target.value });
+  }
+
   render() {
     return (
     <div className="App">
@@ -15,8 +34,8 @@ class App extends React.Component {
       </header>
       <main className="App-main">
         <Wrapper>
-            <Search /> 
-            <TableComponent />
+            <Search value={this.state.value} handleChange={this.handleChange} onClickHandler={ this.searchById } /> 
+            <TableComponent rows={this.state.rows} />
         </Wrapper>
       </main>
       <footer className="App-header">
