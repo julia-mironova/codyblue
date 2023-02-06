@@ -17,7 +17,8 @@ class App extends React.Component {
 
   searchById = (e) => {
     e.preventDefault();    
-    console.log(this.state.value, "searchById")
+    let newRows = this.state.rows.filter(el => el.id === Number(this.state.value))
+    this.setState({rows: newRows})
   }
 
   handleChange = (e) => {

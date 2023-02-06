@@ -52,8 +52,8 @@ class TableComponent extends React.Component {
 
 
     //const colorsAll = [...this.props.rows.map(e => e.color)];
-// const colors = Array.from(new Set(colorsAll))
-// console.log(colors, "colors")
+    // const colors = Array.from(new Set(colorsAll))
+    // console.log(colors, "colors")
     
     return (
       <Box className={styles.table} sx={{
