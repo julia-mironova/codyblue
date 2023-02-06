@@ -1,0 +1,9 @@
+.button {
+  height:40px;
+  background-color: #32a1ce;
+  border:  thick double #32a1ce;
+  border-radius: 5px;
+  text-transform: capitalize;  
+  font-size: 1.4rem;
+  cursor: pointer;  
+}

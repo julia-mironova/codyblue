@@ -1,0 +1,11 @@
+.input {
+  background-color: antiquewhite;
+  border: thick double #32a1ce;
+  border-radius: 5px;
+  padding-left: 5px;  
+}
+
+.label {  
+  font-size: 1.4rem;
+  height: 35px;  
+}

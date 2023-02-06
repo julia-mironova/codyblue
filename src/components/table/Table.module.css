@@ -1,0 +1,10 @@
+.table{
+  height:50vh;
+  border:  thick double #32a1ce;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  cursor: pointer;  
+  margin: 100px;
+  text-transform: capitalize;  
+  font-size: 1.4rem;
+}
